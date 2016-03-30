@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>step_5_demo_widget</class>
+ <widget class="QWidget" name="step_5_demo_widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>step_5_demo</string>
+  </property>
+ </widget>
+ <resources/>
+ <connections/>
+ <slots>
+  <signal>signalUpdatePaletteMenuState()</signal>
+  <signal>signalUpdateDisplayMenuState()</signal>
+  <signal>signalUpdateStatusBar()</signal>
+  <signal>signalUpdatePortrayalMenuState()</signal>
+  <slot>OnAppClose()</slot>
+  <slot>OnChangePalette(int)</slot>
+  <slot>OnChangeDisplay(int)</slot>
+  <slot>OnOpenTestDatabaseWks()</slot>
+  <slot>OnZoomIn()</slot>
+  <slot>OnZoomOut()</slot>
+  <slot>OnPortrayalParameters()</slot>
+  <slot>OnMouseWheelTimeout()</slot>
+  <slot>OnRotate()</slot>
+  <slot>OnOpenDatabaseWorkspace()</slot>
+  <slot>OnGeodatabaseUpdateHistory()</slot>
+  <slot>OnAddBookmark()</slot>
+  <slot>OnBookmarksList()</slot>
+  <slot>OnChangePortrayal(char*)</slot>
+ </slots>
+</ui>

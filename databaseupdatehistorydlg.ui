@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DatabaseUpdateHistoryDlg</class>
+ <widget class="QDialog" name="DatabaseUpdateHistoryDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>654</width>
+    <height>365</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Database update history</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>631</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QTreeWidget" name="tree">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2</family>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <attribute name="headerVisible">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string notr="true">1</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QListWidget" name="list"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="buttonHighlight">
+        <property name="text">
+         <string>Highlight feature</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonClear">
+        <property name="text">
+         <string>Clear highlight</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDialogButtonBox" name="buttonClose">
+        <property name="standardButtons">
+         <set>QDialogButtonBox::Close</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonClose</sender>
+   <signal>clicked(QAbstractButton*)</signal>
+   <receiver>DatabaseUpdateHistoryDlg</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>483</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonHighlight</sender>
+   <signal>released()</signal>
+   <receiver>DatabaseUpdateHistoryDlg</receiver>
+   <slot>OnHighlightFeature()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClear</sender>
+   <signal>released()</signal>
+   <receiver>DatabaseUpdateHistoryDlg</receiver>
+   <slot>OnClearHighlight()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>OnHighlightFeature()</slot>
+  <slot>OnClearHighlight()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/step_5_demo">
+        <file>folder_in_24.png</file>
+        <file>zoom_in_24.png</file>
+        <file>zoom_out_24.png</file>
+        <file>arrow_circle_right_24.png</file>
+        <file>skmecdis.png</file>
+    </qresource>
+</RCC>

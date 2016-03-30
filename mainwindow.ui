@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>step_5_demo</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/step_5_demo/skmecdis.png</normalon>
+   </iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_test_database_workspace"/>
+    <addaction name="actionOpen_database_workspace"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuDisplay">
+    <property name="title">
+     <string>Display</string>
+    </property>
+    <widget class="QMenu" name="menuDisplay_mode">
+     <property name="title">
+      <string>Display mode</string>
+     </property>
+     <addaction name="actionBase"/>
+     <addaction name="actionStandart"/>
+     <addaction name="actionFull"/>
+    </widget>
+    <widget class="QMenu" name="menuPalette">
+     <property name="title">
+      <string>Palette</string>
+     </property>
+     <addaction name="actionDay"/>
+     <addaction name="actionDusk"/>
+     <addaction name="actionNight"/>
+    </widget>
+    <widget class="QMenu" name="menuS_101_Portrayal">
+     <property name="title">
+      <string>S-101 Portrayal</string>
+     </property>
+     <addaction name="actionS_52"/>
+     <addaction name="actionINT_1"/>
+    </widget>
+    <addaction name="actionPortrayal_parameters"/>
+    <addaction name="menuS_101_Portrayal"/>
+    <addaction name="menuDisplay_mode"/>
+    <addaction name="menuPalette"/>
+   </widget>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>Info</string>
+    </property>
+    <addaction name="actionGeodatabase_update_history"/>
+   </widget>
+   <widget class="QMenu" name="menuBookmarks">
+    <property name="title">
+     <string>Bookmarks</string>
+    </property>
+    <addaction name="actionAdd_bookmark"/>
+    <addaction name="actionBookmarks_list"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuInfo"/>
+   <addaction name="menuDisplay"/>
+   <addaction name="menuBookmarks"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen_test_database_workspace"/>
+   <addaction name="actionOpen_database_workspace"/>
+   <addaction name="separator"/>
+   <addaction name="actionZoom_In"/>
+   <addaction name="actionZoom_Out"/>
+   <addaction name="actionRotate"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <action name="actionOpen_test_database_workspace">
+   <property name="icon">
+    <iconset resource="step_5_demo.qrc">
+     <normaloff>:/step_5_demo/folder_in_24.png</normaloff>:/step_5_demo/folder_in_24.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open test database workspace</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionPortrayal_parameters">
+   <property name="text">
+    <string>Portrayal parameters</string>
+   </property>
+  </action>
+  <action name="actionBase">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Base</string>
+   </property>
+  </action>
+  <action name="actionStandart">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Standart</string>
+   </property>
+  </action>
+  <action name="actionFull">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Full</string>
+   </property>
+  </action>
+  <action name="actionDay">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Day</string>
+   </property>
+  </action>
+  <action name="actionDusk">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dusk</string>
+   </property>
+  </action>
+  <action name="actionNight">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Night</string>
+   </property>
+  </action>
+  <action name="actionZoom_In">
+   <property name="icon">
+    <iconset resource="step_5_demo.qrc">
+     <normaloff>:/step_5_demo/zoom_in_24.png</normaloff>:/step_5_demo/zoom_in_24.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom In</string>
+   </property>
+  </action>
+  <action name="actionZoom_Out">
+   <property name="icon">
+    <iconset resource="step_5_demo.qrc">
+     <normaloff>:/step_5_demo/zoom_out_24.png</normaloff>:/step_5_demo/zoom_out_24.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom Out</string>
+   </property>
+  </action>
+  <action name="actionRotate">
+   <property name="icon">
+    <iconset resource="step_5_demo.qrc">
+     <normaloff>:/step_5_demo/arrow_circle_right_24.png</normaloff>:/step_5_demo/arrow_circle_right_24.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rotate</string>
+   </property>
+   <property name="toolTip">
+    <string>Rotate</string>
+   </property>
+  </action>
+  <action name="actionOpen_database_workspace">
+   <property name="icon">
+    <iconset resource="step_5_demo.qrc">
+     <normaloff>:/step_5_demo/folder_in_24.png</normaloff>:/step_5_demo/folder_in_24.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open database workspace</string>
+   </property>
+  </action>
+  <action name="actionGeodatabase_update_history">
+   <property name="text">
+    <string>Geodatabase update history</string>
+   </property>
+  </action>
+  <action name="actionAdd_bookmark">
+   <property name="text">
+    <string>Add bookmark</string>
+   </property>
+  </action>
+  <action name="actionBookmarks_list">
+   <property name="text">
+    <string>Bookmarks list</string>
+   </property>
+  </action>
+  <action name="actionS_52">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>S-52</string>
+   </property>
+  </action>
+  <action name="actionINT_1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>INT-1</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="step_5_demo.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnAppClose()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDay</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnDayPalette()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDusk</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnDuskPalette()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNight</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnNightPalette()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBase</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnDisplayBase()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStandart</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnDisplayStandart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFull</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnDisplayFull()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen_test_database_workspace</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnOpenTestDatabaseWks()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZoom_In</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnZoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZoom_Out</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnZoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPortrayal_parameters</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnPortrayalParameters()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRotate</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnRotate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen_database_workspace</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnOpenDatabaseWorkspace()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGeodatabase_update_history</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnGeodatabaseUpdateHistory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAdd_bookmark</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnAddBookmark()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBookmarks_list</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnBookmarksList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionS_52</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnS52Portrayal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionINT_1</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnINT1Portrayal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>signalAppClose()</signal>
+  <signal>signalChangePalette(int)</signal>
+  <signal>signalChangeDisplay(int)</signal>
+  <signal>signalOpenTestDatabaseWks()</signal>
+  <signal>signalZoomIn()</signal>
+  <signal>signalZoomOut()</signal>
+  <signal>signalPortrayalParameters()</signal>
+  <signal>signalRotate()</signal>
+  <signal>signalOpenDatabaseWorkspace()</signal>
+  <signal>signalGeodatabaseUpdateHistory()</signal>
+  <signal>signalAddBookmark()</signal>
+  <signal>signalBookmarksList()</signal>
+  <signal>signalChangePortrayal(char*)</signal>
+  <slot>OnAppClose()</slot>
+  <slot>OnUpdatePaletteMenuState()</slot>
+  <slot>OnUpdateDisplayMenuState()</slot>
+  <slot>OnDayPalette()</slot>
+  <slot>OnDuskPalette()</slot>
+  <slot>OnNightPalette()</slot>
+  <slot>OnDisplayBase()</slot>
+  <slot>OnDisplayStandart()</slot>
+  <slot>OnDisplayFull()</slot>
+  <slot>OnOpenTestDatabaseWks()</slot>
+  <slot>OnZoomIn()</slot>
+  <slot>OnZoomOut()</slot>
+  <slot>OnPortrayalParameters()</slot>
+  <slot>OnUpdateStatusBar()</slot>
+  <slot>OnRotate()</slot>
+  <slot>OnOpenDatabaseWorkspace()</slot>
+  <slot>OnGeodatabaseUpdateHistory()</slot>
+  <slot>OnAddBookmark()</slot>
+  <slot>OnBookmarksList()</slot>
+  <slot>OnS52Portrayal()</slot>
+  <slot>OnINT1Portrayal()</slot>
+  <slot>OnUpdatePortrayalMenuState()</slot>
+ </slots>
+</ui>
